@@ -21,8 +21,8 @@ export const loadCharacters = async (n) => {
   
   const characters = [];
 
-  for (const { id, name, status, species, gender, origin, image } of results) {
-    characters.push(new Character(id, name, status, species, gender, origin, image));
+  for (const { id, name, status, species, origin, image } of results) {
+    characters.push(new Character(id, name, status, species, image, origin));
   }
   
   return characters;

@@ -1,8 +1,8 @@
 import { writeFile } from "fs/promises";
 import { render } from "./render.js";
-import { loadUsers } from "./users.js";
+import { loadCharacters } from "./characters.js";
 
-const users = await loadUsers(100);
-const html = render(users);
-await writeFile('users.html', html);
 
+const characters = await loadCharacters(20);
+const html = render(characters);
+await writeFile('index.html', html);
