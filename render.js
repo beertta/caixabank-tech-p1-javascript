@@ -11,16 +11,34 @@ const renderCharacters = (characters) => {
   let html = "";
   for (const char of characters) {
     html += `
-    <div class="character">
+    <a href="detalle_${char.id}.html" target="_blank" class="card">
       <img src="${char.image}" width="100" />
       <div class="data">
         <div class="name"><strong>${char.name}</strong></div>
         <div class="info">${char.species} - ${char.status}</div>
       </div>
       <hr>
-    </div>`;
+    </a>`;
   }
   return html;
+}
+
+export const renderDetail = (char) => {
+  return `
+<!DOCTYPE html>
+<html lang="es">
+  ${head("Detalle de " + char.name)}
+  <body>
+    <a href="index.html">← Volver a la lista</a>
+    <h1>${char.name}</h1>
+    <img src="${char.image}" width="300" />
+    <div class="details">
+      <p><strong>Estado:</strong> ${char.status}</p>
+      <p><strong>Especie:</strong> ${char.species}</p>
+      <p><strong>Origen:</strong> ${char.originName}</p>
+    </div>
+  </body>
+</html>`;
 }
 
 export const render = (characters) => {
