@@ -15,16 +15,30 @@ export class Character {
 }
 
 export const loadCharacters = async (n) => {
-  
-  const response = await fetch(`https://rickandmortyapi.com/api/character`);
-  const { results } = await response.json();
-  
+
+  let idsArray = [];
+
+  for (let i = 1; i <= n; i++) {
+    idsArray.push(i);
+  }
+
+  const ids = idsArray.join(',');
+
+  const response = await fetch(`https://rickandmortyapi.com/api/character/${ids}`);
+  const results = await response.json();
+
   const characters = [];
 
-  for (const { id, name, status, species, origin, image } of results) {
-    characters.push(new Character(id, name, status, species, image, origin));
+  for (const char of results) {
+    characters.push(new Character(
+      char.id, 
+      char.name, 
+      char.status, 
+      char.species, 
+      char.image, 
+      char.origin
+    ));
   }
   
   return characters;
 };
-

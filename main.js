@@ -3,7 +3,7 @@ import { render, renderDetail} from "./render.js";
 import { loadCharacters } from "./characters.js";
 
 
-const characters = await loadCharacters(20);
+const characters = await loadCharacters(54);
 const html = render(characters);
 await writeFile('index.html', html);
 
