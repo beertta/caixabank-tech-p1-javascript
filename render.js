@@ -26,15 +26,33 @@ export const renderDetail = (char) => {
   return `
 <!DOCTYPE html>
 <html lang="es">
-  ${head("Detalle de " + char.name)}
-  <body>
-    <a href="index.html">← Volver a la lista</a>
-    <h1>${char.name}</h1>
-    <img src="${char.image}" width="300" />
-    <div class="details">
-      <p><strong>Estado:</strong> ${char.status}</p>
-      <p><strong>Especie:</strong> ${char.species}</p>
-      <p><strong>Origen:</strong> ${char.originName}</p>
+  ${head("Detall de " + char.name)}
+  <body class="detail-page">
+    <div class="detail-container">
+      <a href="index.html" class="back-rocket">
+        <img src="images/rocket.png" alt="Tornar" />
+      </a>
+
+      <div class="detail-card">
+        <div class="char-image-wrapper">
+          <img src="${char.image}" alt="${char.name}" />
+        </div>
+        
+        <div class="detail-info">
+          <h1>${char.name}</h1>
+          
+          <div class="stats-grid">
+            <div class="stat-label">State:</div>
+            <div class="stat-value">${char.status}</div>
+            
+            <div class="stat-label">Species:</div>
+            <div class="stat-value">${char.species}</div>
+            
+            <div class="stat-label">Origin:</div>
+            <div class="stat-value">${char.originName}</div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>`;
@@ -46,7 +64,7 @@ export const render = (characters) => {
   ${head("Lista Rick & Morty")}
   <body>
    <header class="main-header">
-        <img src="logo.png" alt="Logo Rick and Morty" class="main-logo">
+        <img src="images/logo.png" alt="Logo Rick and Morty" class="main-logo">
     </header>
     ${renderCharacters(characters)}
   </body>
