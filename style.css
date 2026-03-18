@@ -129,9 +129,10 @@ h1 {
     border-top-right-radius: 30px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    border: 2px solid #b2df28;
     padding: 60px 40px 40px 40px;
     position: relative;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    box-shadow: 0 0 30px rgba(195, 213, 96, 0.6);
     margin-top: 180px;
 }
 
