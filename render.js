@@ -4,22 +4,21 @@ const head = (title) => `
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <title>${title}</title>
 </head>`;
 
 const renderCharacters = (characters) => {
-  let html = "";
+  let html = '<div class="grid-container">';
   for (const char of characters) {
     html += `
     <a href="detalle_${char.id}.html" target="_blank" class="card">
-      <img src="${char.image}" width="100" />
-      <div class="data">
-        <div class="name"><strong>${char.name}</strong></div>
-        <div class="info">${char.species} - ${char.status}</div>
-      </div>
-      <hr>
+      <img src="${char.image}" alt="${char.name}" class="card-img" />
+      <div class="card-name">${char.name}</div>
     </a>`;
   }
+  html += '</div>';
   return html;
 }
 
@@ -46,7 +45,9 @@ export const render = (characters) => {
 <html>
   ${head("Lista Rick & Morty")}
   <body>
-    <h1>Personajes</h1>
+   <header class="main-header">
+        <img src="logo.png" alt="Logo Rick and Morty" class="main-logo">
+    </header>
     ${renderCharacters(characters)}
   </body>
 </html>`;

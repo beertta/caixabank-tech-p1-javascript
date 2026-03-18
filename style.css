@@ -1,0 +1,84 @@
+body {
+
+    background-image:
+        url('planetes.png'), 
+        url('estrellas_pattern.png'),
+        linear-gradient(180deg, #011928 0%, #02456E 100%);
+    background-repeat:
+        no-repeat,
+        repeat,
+        no-repeat;
+    background-position: 
+        center center,
+        left top,
+        center top;
+    background-size: 
+        95% auto,
+        auto,
+        100% 100%;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    
+}
+
+h1 {
+    text-align: center;
+    color: #b2df28;
+    text-shadow: 0 0 10px rgba(178, 223, 40, 0.7);
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+.main-header {
+    text-align: center; 
+    padding: 40px 0;    
+}
+
+.main-logo {
+    max-width: 700px;  
+    width: 100%;         
+    height: auto;       
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.card {
+    background: linear-gradient(180deg, rgba(195, 213, 96, 1.0) 0%,rgba(195, 213, 96, 0.5) 100%);
+    border: 2px solid #b2df28;
+    border-radius: 20px;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 30px rgba(195, 213, 96, 0.6);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(178, 223, 40, 0.6);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border: none;
+}
+
+.card .name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
