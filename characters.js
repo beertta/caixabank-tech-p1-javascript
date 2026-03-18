@@ -1,3 +1,4 @@
+// Definimos la clase de Personaje para que todos tengan la misma estructura
 export class Character {
   constructor(id, name, status, species, image, origin) {
     this.id = id;
@@ -14,21 +15,25 @@ export class Character {
 
 }
 
+// Función para cargar los personajes desde la API de forma asíncrona
 export const loadCharacters = async (n) => {
 
   let idsArray = [];
 
+  //Lista con los números de ID que queremos pedir
   for (let i = 1; i <= n; i++) {
     idsArray.push(i);
   }
 
   const ids = idsArray.join(',');
 
+  // Petición a la API usando la lista de IDs generada
   const response = await fetch(`https://rickandmortyapi.com/api/character/${ids}`);
   const results = await response.json();
 
   const characters = [];
 
+  // Recorremos los datos de la API para crear objetos de la clase Character
   for (const char of results) {
     characters.push(new Character(
       char.id, 

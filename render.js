@@ -1,5 +1,5 @@
 import { Character } from "./characters.js";
-
+// Estructura del head con los estilos y tipografia
 const head = (title) => `
 <head>
   <meta charset="UTF-8">
@@ -9,6 +9,7 @@ const head = (title) => `
   <title>${title}</title>
 </head>`;
 
+// Contenedor principal con la cuadrícula de personajes
 const renderCharacters = (characters) => {
   let html = '<div class="grid-container">';
   for (const char of characters) {
@@ -22,6 +23,7 @@ const renderCharacters = (characters) => {
   return html;
 }
 
+//HTML completo para la página de detalle de cada personaje
 export const renderDetail = (char) => {
   return `
 <!DOCTYPE html>
@@ -58,6 +60,7 @@ export const renderDetail = (char) => {
 </html>`;
 }
 
+// HTML de la página de inicio
 export const render = (characters) => {
   return `
 <html>
